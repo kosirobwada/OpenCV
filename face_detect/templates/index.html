@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>顔検出アプリ</title>
+  </head>
+  <body>
+    <h1>顔検出アプリ</h1>
+    {% if message %}
+      <p>{{ message }}</p>
+    {% endif %}
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <input type="submit" value="アップロード">
+    </form>
+  </body>
+</html>
