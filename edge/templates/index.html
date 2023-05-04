@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edge Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Edge Detection</h1>
+      <form method="post" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg,.jpeg,.png,.gif" required>
+        <input type="submit" value="Upload">
+      </form>
+      {% if data %}
+        <h2>Original Image</h2>
+        <img src="data:image/jpeg;base64,{{ data['img_str'] }}" alt="Original Image">
+        <h2>Edge Image</h2>
+        <img src="data:image/jpeg;base64,{{ data['edge_img_str'] }}" alt="Edge Image">
+      {% endif %}
+    </div>
+  </body>
+</html>
